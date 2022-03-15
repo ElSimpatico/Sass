@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+@mixin define-grid($viewport) {
+    $gap: map.get(variables.$grid-gap, $viewport);
+
+    @include mixins.min-breakpoint($viewport) {
+        --columns: #{variables.$grid-columns};
+        --gap: #{$gap};
+        @for $index from 1 through variables.$grid-columns {
+            .col-#{$viewport}-#{$index} {
+                grid-column-end: span $index;
+            }
+        }
+    }
+}
+
+.grid {
+    --columns: 12;
+    --gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    gap: var(--gap);
+    & > * {
+        grid-column-end: span var(--columns);
+    }
+    @each $key, $value in variables.$breakpoints {
+        @include define-grid($key);
+    }
+}
+
+.col-demo {
+    background-color: paleturquoise;
+    height: 100px;
+    border: 1px solid green;
+}

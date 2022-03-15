@@ -1,0 +1,23 @@
+@use 'sass:map';
+@use './light';
+@use './dark';
+
+$themes: (
+    light: light.$theme,
+    dark: dark.$theme,
+);
+
+@mixin defineTheme($theme, $section) {
+    $themeSection: map.get($theme, $section);
+    @each $key, $value in $themeSection {
+        --#{$section}_#{$key}: #{$value};
+    }
+}
+
+.theme {
+    @each $key, $value in $themes {
+        &-#{$key} {
+            @include defineTheme($value, 'color');
+        }
+    }
+}

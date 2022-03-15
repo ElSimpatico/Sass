@@ -1,0 +1,67 @@
+// colors
+$ghost: transparent;
+$pureWhite: #ffffff;
+$pureBlack: #000000;
+$darkGray: #756d6d;
+
+$bgBody: $pureWhite;
+$body: $pureBlack;
+$primary: $pureBlack;
+
+html,
+body,
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bgBody;
+    color: $body;
+}
+
+.container {
+    display: inline-grid;
+    margin: 8px;
+    & .button {
+        margin-bottom: 8px;
+    }
+}
+.button {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    outline: 1px solid $primary;
+    font-size: 16px;
+    line-height: 20px;
+    color: inherit;
+
+    &-primary {
+        background-color: $primary;
+        color: $pureWhite;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &-secondary {
+        background-color: $ghost;
+        &:hover {
+            outline-width: 2px;
+        }
+    }
+    &-tertiary {
+        outline: none;
+        background-color: $ghost;
+        &::after {
+            content: '→';
+            display: inline-flex;
+            margin: 0 0 0 8px;
+        }
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use '../abstract/variables';
+
+$theme: (
+    color: (
+        body_background: map.get(variables.$neutral-palette, 'black'),
+        body: map.get(variables.$neutral-palette, 'white'),
+        toggle_background: variables.$color-interface-02,
+        toggle: variables.$color-interface-06,
+    ),
+);

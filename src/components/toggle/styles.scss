@@ -1,0 +1,40 @@
+.toggle {
+    & > input[type='checkbox'] {
+        /* hiding html input */
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        &:checked + .toggle-control {
+            background-color: var(--color_toggle);
+            &::after {
+                transform: translate(100%, -50%);
+            }
+        }
+    }
+    &-control {
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+        width: calc(var(--toggleSize) * 2);
+        height: calc(var(--toggleSize) / 2);
+        border-radius: var(--toggleSize);
+        background-color: var(--color_toggle_background);
+        position: relative;
+        &::after {
+            transition: all 0.3s ease-in-out;
+            content: '';
+            display: block;
+            width: var(--toggleSize);
+            height: var(--toggleSize);
+            border-radius: 50%;
+            background-color: var(--color_toggle);
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+    }
+}

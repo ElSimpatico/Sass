@@ -1,0 +1,74 @@
+@use 'sass:map';
+
+// grid
+$gridColumns: 12;
+$gridGap: (
+    s: 16px,
+    m: 32px,
+    l: 32px,
+    xl: 32px,
+);
+
+// breakpoints
+$breakpoints: (
+    s: 320px,
+    m: 764px,
+    l: 1016px,
+    xl: 1436px,
+);
+
+@mixin min-breakpoint($breakpoint: 's') {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+@mixin define-grid($viewport) {
+    $gap: map.get($gridGap, $viewport);
+
+    @include min-breakpoint($viewport) {
+        --columns: #{$gridColumns};
+        --gap: #{$gap};
+        @for $index from 1 through $gridColumns {
+            .nova-col-#{$viewport}-#{$index} {
+                grid-column-end: span $index;
+            }
+        }
+    }
+}
+
+html,
+body,
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+hr {
+    margin: 8px;
+}
+
+.nova {
+    &-grid {
+        --columns: 12;
+        --gap: 16px;
+        display: grid;
+        grid-template-columns: repeat(var(--columns), 1fr);
+        gap: var(--gap);
+        & > * {
+            grid-column-end: span var(--columns);
+        }
+        @each $key, $value in $breakpoints {
+            @include define-grid($key);
+        }
+    }
+
+    &-col-demo {
+        background-color: paleturquoise;
+        height: 100px;
+        border: 1px solid green;
+    }
+}

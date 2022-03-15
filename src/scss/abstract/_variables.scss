@@ -1,0 +1,40 @@
+@use 'sass:map';
+
+// neutral palette
+$neutral-palette: (
+    'black': #1b1b1b,
+    'gray': #666666,
+    'darkGray': #75787b,
+    'offWhite': #a3a3a3,
+    'mediumGray': #d1d1d1,
+    'lightGray': #f4f4f3,
+    'white': #ffffff,
+);
+
+// dessert-sand palette
+$dessert-sand: (
+    '100': #dbd3cb,
+);
+
+// colors interface
+$color-interface-01: map.get($neutral-palette, 'black');
+$color-interface-02: map.get($neutral-palette, 'darkGray');
+$color-interface-03: map.get($neutral-palette, 'mediumGray');
+$color-interface-06: map.get($dessert-sand, '100');
+
+// breakpoints
+$breakpoints: (
+    s: 320px,
+    m: 764px,
+    l: 1016px,
+    xl: 1436px,
+);
+
+// grid
+$grid-columns: 12;
+$grid-gap: (
+    s: 16px,
+    m: 32px,
+    l: 32px,
+    xl: 32px,
+);

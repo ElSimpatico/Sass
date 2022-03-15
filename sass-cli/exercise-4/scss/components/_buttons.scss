@@ -1,0 +1,44 @@
+@use '../abstract/variables';
+
+.container {
+    display: inline-grid;
+    margin: 8px;
+    & .button {
+        margin-bottom: 8px;
+    }
+}
+.button {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    outline: 1px solid var(--color_primary);
+    font-size: 16px;
+    line-height: 20px;
+    color: inherit;
+
+    &-primary {
+        background-color: var(--color_primary);
+        color: variables.$pureWhite;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &-secondary {
+        background-color: variables.$ghost;
+        &:hover {
+            outline-width: 2px;
+        }
+    }
+    &-tertiary {
+        outline: none;
+        background-color: variables.$ghost;
+        &::after {
+            content: '→';
+            display: inline-flex;
+            margin: 0 0 0 8px;
+        }
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

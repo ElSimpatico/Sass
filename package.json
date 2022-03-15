@@ -1,0 +1,38 @@
+{
+    "name": "sass",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/ElSimpatico/Sass.git",
+    "author": "avelascl <avelascl@nttdata.com>",
+    "license": "MIT",
+    "scripts": {
+        "start": "webpack serve --config webpack.config.js --mode=development --progress",
+        "build:dev": "webpack --mode=development --progress",
+        "build": "webpack --mode=production --progress",
+        "sass:1": "rm -rf ./sass-cli/exercise-1/css && sass --watch ./sass-cli/exercise-1/scss:./sass-cli/exercise-1/css",
+        "sass:2": "rm -rf ./sass-cli/exercise-2/css && sass --watch ./sass-cli/exercise-2/scss:./sass-cli/exercise-2/css",
+        "sass:3": "rm -rf ./sass-cli/exercise-3/css && sass --watch ./sass-cli/exercise-3/scss:./sass-cli/exercise-3/css",
+        "sass:4": "rm -rf ./sass-cli/exercise-4/css && sass --watch ./sass-cli/exercise-4/scss:./sass-cli/exercise-4/css",
+        "sass:example": "rm -rf ./sass-cli/example/css && sass --watch ./sass-cli/example/scss:./sass-cli/example/css"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.17.5",
+        "@babel/preset-env": "^7.16.11",
+        "@babel/preset-react": "^7.16.7",
+        "babel-loader": "^8.2.3",
+        "css-loader": "^6.7.0",
+        "html-webpack-plugin": "^5.5.0",
+        "sass": "^1.49.9",
+        "sass-alias": "^1.0.5",
+        "sass-loader": "^12.6.0",
+        "sass-migrator": "^1.5.4",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.70.0",
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.7.4"
+    },
+    "dependencies": {
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0"
+    }
+}

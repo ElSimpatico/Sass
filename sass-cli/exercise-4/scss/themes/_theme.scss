@@ -1,0 +1,16 @@
+@use '../themes/light';
+@use '../themes/dark';
+
+.theme {
+    &-light {
+        --color_body_backgorund: #{light.$bgBody};
+        --color_body: #{light.$body};
+        --color_primary: #{light.$primary};
+    }
+
+    &-dark {
+        --color_body_backgorund: #{dark.$bgBody};
+        --color_body: #{dark.$body};
+        --color_primary: #{dark.$primary};
+    }
+}

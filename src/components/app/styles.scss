@@ -1,0 +1,11 @@
+@use '@scss/abstract/mixins';
+
+.app-container {
+    position: relative;
+    margin: 32px;
+    .toggle-theme {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

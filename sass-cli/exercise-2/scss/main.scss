@@ -1,0 +1,64 @@
+@mixin text-overflow($ellipsis: true) {
+    overflow: hidden;
+    white-space: nowrap;
+    @if ($ellipsis) {
+        text-overflow: ellipsis;
+    }
+}
+
+@mixin text-overflow-lines($lines: 1) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}
+
+@mixin text-overflow-lineHeight($lines: 1, $lineHeight) {
+    overflow: hidden;
+    line-height: $lineHeight;
+    max-height: calc($lineHeight * $lines);
+}
+
+@mixin cut-lines($lines: 1, $lineHeight: false) {
+    @if ($lines == 1 and not $lineHeight) {
+        @include text-overflow;
+    } @else if($lines > 1) {
+        @if ($lineHeight) {
+            @include text-overflow-lineHeight($lines, $lineHeight);
+        }
+        @supports (-webkit-line-clamp: 1) {
+            @include text-overflow-lines($lines);
+            max-height: none;
+        }
+    }
+}
+
+html,
+body,
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    max-width: 500px;
+    margin: 0 auto;
+    p {
+        margin: 8px;
+        &:nth-child(1) {
+            @include cut-lines;
+        }
+        &:nth-child(2) {
+            @include cut-lines(2);
+        }
+        &:nth-child(3) {
+            @include cut-lines(3, 20px);
+        }
+        &:nth-child(4) {
+            @include cut-lines(4);
+        }
+    }
+}

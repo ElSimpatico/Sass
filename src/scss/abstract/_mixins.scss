@@ -1,0 +1,16 @@
+@use './variables';
+@use 'sass:map';
+
+@mixin text-overflow($elipsis: true) {
+    white-space: nowrap;
+    overflow: hidden;
+    @if ($elipsis) {
+        text-overflow: ellipsis;
+    }
+}
+
+@mixin min-breakpoint($breakpoint: 's') {
+    @media (min-width: map.get(variables.$breakpoints, $breakpoint)) {
+        @content;
+    }
+}

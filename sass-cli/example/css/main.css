@@ -1,0 +1,31 @@
+html,
+body,
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.seven-plus-one-color-success {
+  background-color: green;
+}
+
+.seven-plus-one-color-info {
+  background-color: blue;
+}
+
+.seven-plus-one-color-warn {
+  background-color: orange;
+}
+
+.seven-plus-one-color-error {
+  background-color: red;
+}
+
+.seven-plus-one-button {
+  padding: 8px 16px;
+}
+
+/*# sourceMappingURL=main.css.map */

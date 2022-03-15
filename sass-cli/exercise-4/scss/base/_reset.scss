@@ -1,0 +1,14 @@
+html,
+body,
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color_body_backgorund);
+    color: var(--color_body);
+}
