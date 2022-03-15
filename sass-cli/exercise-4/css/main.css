@@ -11,27 +11,18 @@
   padding: 8px 16px;
   cursor: pointer;
   border: none;
-  outline: 1px solid var(--color_primary);
   font-size: 16px;
   line-height: 20px;
   color: inherit;
 }
-.button-primary {
-  background-color: var(--color_primary);
-  color: #ffffff;
-}
 .button-primary:hover {
   opacity: 0.7;
-}
-.button-secondary {
-  background-color: transparent;
 }
 .button-secondary:hover {
   outline-width: 2px;
 }
 .button-tertiary {
   outline: none;
-  background-color: transparent;
 }
 .button-tertiary::after {
   content: "→";
@@ -50,22 +41,6 @@ body,
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  background-color: var(--color_body_backgorund);
-  color: var(--color_body);
-}
-
-.theme-light {
-  --color_body_backgorund: #ffffff;
-  --color_body: #000000;
-  --color_primary: #000000;
-}
-.theme-dark {
-  --color_body_backgorund: #000000;
-  --color_body: #ffffff;
-  --color_primary: #756d6d;
 }
 
 /*# sourceMappingURL=main.css.map */

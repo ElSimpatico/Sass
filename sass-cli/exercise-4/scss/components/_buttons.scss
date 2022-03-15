@@ -1,4 +1,4 @@
-@use '../abstract/variables';
+// use the modules that you need
 
 .container {
     display: inline-grid;
@@ -11,27 +11,27 @@
     padding: 8px 16px;
     cursor: pointer;
     border: none;
-    outline: 1px solid var(--color_primary);
+    // outline: value
     font-size: 16px;
     line-height: 20px;
     color: inherit;
 
     &-primary {
-        background-color: var(--color_primary);
-        color: variables.$pureWhite;
+        // background-color: value;
+        // color: value;
         &:hover {
             opacity: 0.7;
         }
     }
     &-secondary {
-        background-color: variables.$ghost;
+        // background-color: value;
         &:hover {
             outline-width: 2px;
         }
     }
     &-tertiary {
         outline: none;
-        background-color: variables.$ghost;
+        // background-color: value;
         &::after {
             content: '→';
             display: inline-flex;
